@@ -1,21 +1,163 @@
+```html
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Smart Coconut Health AI</title>
-    <meta name="description" content="AI-Powered Early Coconut Tree Disease Detection, 360° Camera Monitoring, and GPS Farm Early Warning System with Tamil & English support." />
+
+    <meta
+      name="description"
+      content="AI-powered coconut disease detection, farm monitoring, GPS alerts, and Tamil and English language support."
+    />
+
+    <meta name="theme-color" content="#020617" />
+
     <meta property="og:title" content="Smart Coconut Health AI" />
-    <meta property="og:description" content="AI-Powered Early Coconut Tree Disease Detection, 360° Camera Monitoring, and GPS Farm Early Warning System with Tamil & English support." />
+    <meta
+      property="og:description"
+      content="Detect coconut diseases and monitor coconut farm health."
+    />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        font-family: "Plus Jakarta Sans", "Noto Sans Tamil", sans-serif;
+        background: #020617;
+        color: #f8fafc;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+
+      #root {
+        min-height: 100vh;
+      }
+
+      .loading-screen {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        text-align: center;
+      }
+
+      .loading-icon {
+        font-size: 64px;
+        margin-bottom: 16px;
+      }
+
+      .loading-title {
+        font-size: 28px;
+        font-weight: 800;
+        color: #34d399;
+        margin-bottom: 12px;
+      }
+
+      .loading-text {
+        color: #cbd5e1;
+        font-size: 15px;
+      }
+
+      .loading-spinner {
+        width: 36px;
+        height: 36px;
+        border: 4px solid #1e293b;
+        border-top-color: #34d399;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        margin-top: 24px;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .error-message {
+        max-width: 600px;
+        margin: 24px auto;
+        padding: 20px;
+        border: 1px solid #ef4444;
+        border-radius: 12px;
+        background: #450a0a;
+        color: #fecaca;
+        overflow-wrap: anywhere;
+      }
+
+      .error-message h2 {
+        margin-top: 0;
+      }
+
+      .error-message p {
+        line-height: 1.6;
+      }
+
+      .error-message code {
+        color: #fde68a;
+      }
+    </style>
+
+    <!-- Leaflet map library -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      defer
+    ></script>
   </head>
-  <body class="bg-slate-950 text-slate-100 antialiased font-sans selection:bg-emerald-500 selection:text-white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+
+  <body>
+    <div id="root">
+      <div class="loading-screen">
+        <div class="loading-icon">🌴</div>
+
+        <div class="loading-title">
+          Smart Coconut Health AI
+        </div>
+
+        <div class="loading-text">
+          Loading coconut disease detection system...
+          <br />
+          தென்னை நோய் கண்டறியும் அமைப்பு ஏற்றப்படுகிறது...
+        </div>
+
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+
+    <!-- React application entry point -->
+    <script type="module" src="/coconut_disease/src/main.tsx"></script>
+
+    <script>
+      window.addEventListener("error", function (event) {
+        console.error("Website error:", event.message);
+      });
+    </script>
   </body>
 </html>
+```
